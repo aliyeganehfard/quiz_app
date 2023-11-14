@@ -37,7 +37,7 @@ class _QuizState extends State<Quiz> {
     setState(() {
       if (selectedAnswer.length == questions.length) {
         activeScreen = 'results-screen';
-        selectedAnswer.clear();
+        // selectedAnswer.clear();
       }
     });
   }
@@ -64,7 +64,7 @@ class _QuizState extends State<Quiz> {
           onSelectAnswer: chooseAnswer,
         );
       case 'results-screen':
-        screenWidget = const ResultsScreen();
+        screenWidget = ResultsScreen(chosenAnswers: selectedAnswer,);
         break;
       default:
         screenWidget = StartScreen(switchScreen);
